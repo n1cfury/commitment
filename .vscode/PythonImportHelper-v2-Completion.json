@@ -18,11 +18,20 @@
         "documentation": {}
     },
     {
-        "label": "repo_path",
+        "label": "urllib.request",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.request",
+        "description": "urllib.request",
+        "detail": "urllib.request",
+        "documentation": {}
+    },
+    {
+        "label": "url",
         "kind": 5,
         "importPath": "commitbot",
         "description": "commitbot",
-        "peekOfCode": "repo_path = \"https://github.com/n1cfury/commitment\"\n# specify number of commits to generate\nnum_commits = random.randint(3, 19)\n# generate and commit random changes\nfor i in range(num_commits):\n    # generate random text file\n    with open(os.path.join(repo_path, 'random.txt'), 'w') as f:\n        f.write(str(random.randint(0, 1000000)))\n    # stage and commit changes\n    os.system('cd {0} && git add -A && git commit -m \"Random commit #{1}\"'.format(repo_path, i+1))",
+        "peekOfCode": "url = \"https://raw.githubusercontent.com/n1cfury/commitment/main/random.txt\"\n# specify number of commits to generate\nnum_commits = random.randint(3, 19)\n# generate and commit random changes\nfor i in range(num_commits):\n    # generate random text file\n    with urllib.request.urlopen(url) as response, open('random.txt', 'wb') as f:\n        f.write(response.read())\n    # stage and commit changes\n    os.system('git add -A && git commit -m \"Random commit #{0}\"'.format(i+1))",
         "detail": "commitbot",
         "documentation": {}
     },
@@ -31,7 +40,7 @@
         "kind": 5,
         "importPath": "commitbot",
         "description": "commitbot",
-        "peekOfCode": "num_commits = random.randint(3, 19)\n# generate and commit random changes\nfor i in range(num_commits):\n    # generate random text file\n    with open(os.path.join(repo_path, 'random.txt'), 'w') as f:\n        f.write(str(random.randint(0, 1000000)))\n    # stage and commit changes\n    os.system('cd {0} && git add -A && git commit -m \"Random commit #{1}\"'.format(repo_path, i+1))\nprint('Generated {0} random commits.'.format(num_commits))",
+        "peekOfCode": "num_commits = random.randint(3, 19)\n# generate and commit random changes\nfor i in range(num_commits):\n    # generate random text file\n    with urllib.request.urlopen(url) as response, open('random.txt', 'wb') as f:\n        f.write(response.read())\n    # stage and commit changes\n    os.system('git add -A && git commit -m \"Random commit #{0}\"'.format(i+1))\nprint('Generated {0} random commits.'.format(num_commits))",
         "detail": "commitbot",
         "documentation": {}
     }
