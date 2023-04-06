@@ -22,7 +22,7 @@
         "kind": 5,
         "importPath": "commitbot",
         "description": "commitbot",
-        "peekOfCode": "repo_path = \"https://github.com/n1cfury/commitment/blob/\"\n# specify number of commits to generate\nnum_commits = random.randint(3, 19)\n# generate and commit random changes\nfor i in range(num_commits):\n    # generate random text file\n    with open(os.path.join(repo_path, 'random.txt'), 'w') as f:\n        f.write(str(random.randint(0, 1000000)))\n    # stage and commit changes\n    os.system('cd {0} && git add -A && git commit -m \"Random commit #{1}\"'.format(repo_path, i+1))",
+        "peekOfCode": "repo_path = \"https://github.com/n1cfury/commitment/blob/main\"\n# specify number of commits to generate\nnum_commits = random.randint(3, 19)\n# generate and commit random changes\nfor i in range(num_commits):\n    # generate random text file\n    with open(os.path.join(repo_path, 'random.txt'), 'w') as f:\n        f.write(str(random.randint(0, 1000000)))\n    # stage and commit changes\n    os.system('cd {0} && git add -A && git commit -m \"Random commit #{1}\"'.format(repo_path, i+1))",
         "detail": "commitbot",
         "documentation": {}
     },

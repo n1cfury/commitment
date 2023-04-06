@@ -2,7 +2,7 @@ import os
 import random
 
 # specify path to local repository
-repo_path = "https://github.com/n1cfury/commitment/blob/"
+repo_path = "https://github.com/n1cfury/commitment/blob/main"
 
 # specify number of commits to generate
 num_commits = random.randint(3, 19)
